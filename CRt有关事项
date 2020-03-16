@@ -1,0 +1,34 @@
+#Minecraft CRT NOTE
+#在输入/ct hand后会输出手中持有的物品的ID
+#按F3+H可以查看物品的ID
+#输入/ct names 会打印所有物品ID在logs文件中
+#输入/ct reloaded可以重新加载MT文件
+#例子:合成修改格式：
+/*
+recipes.addshaped(<minecraft:diamond> *2,
+       [[<minecraft:iron_ingot>,<minecraft:iron_ingot>,<minecraft:iron_ingot>],
+        [                  null,<minecraft:iron_ingot>,                  null],
+        [<minecraft:iron_ingot>,<minecraft:iron_ingot>,<minecraft:iron_ingot>]]   
+);
+*/
+#对于无序合成，格式与有序一致，但比较随意：
+#指令如下
+/*
+recipes.addshapeless()
+*/
+#对于移除可以用recipes后加remove
+#如：recipe.remove（XXX）为移除结果为XXX的所有合成
+#移除特定有序合成：recipes.removeshaped（XXX,....）
+#移除特定无序合成：recipes.removeshapeless
+#对于一个已经存在的合成，要想修改应该先移除再添加合成
+#对于熔炉参加魔改，可以用furnace.addrecipe(XXX,XXX,经验值)
+#添加矿物词典：<ore:XXX>.add(XXX)
+#矿物词典可以参与合成，当矿物词典参与合成时会检索所有该类型的物品
+#命名修改<XXX>.displatName = "XXX"
+#添加文本提示.addTooltip("XXX")即Tooptips
+#若要给予多行提示，需要重复很多次
+#若要添加按下shift才会显示的提示需要：<XXX>.addShiftTooltip
+#若要给文本加入颜色可以用<XXX>.addTooltip(format.blue("XXX"))
+#当然，以上是举例
+#如果需要多种颜色可以使用+进行操作
+#很重要的一条，该大写的一定要大写
